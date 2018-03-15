@@ -1,0 +1,4 @@
+drm:
+  card0-DP-3:
+    on_connect: ~/bin/reset_workspaces.sh
+    on_disconnect: xrandr --output DP-1-1 --off
