@@ -4,7 +4,6 @@ import (
 	"context"
 	"errors"
 	"flag"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -130,7 +129,7 @@ func run(config *map[string]map[string]YamlDevice) {
 			panic("Couldn't create chan")
 		}
 
-		fmt.Printf("Listening to events for subsystem %s...\n", subsystem)
+		InfoLog.Printf("Listening to events for subsystem %s...\n", subsystem)
 		wg.Add(1)
 		go handleEvents(ch, &wg, &devices)
 	}
