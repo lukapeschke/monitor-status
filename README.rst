@@ -35,6 +35,8 @@ docker. A service file will also be generated::
         $ sudo systemctl daemon-reload
         $ sudo systemctl start monitor-status
 
+The service should now be enabled and running.
+
 Configuration
 =============
 
