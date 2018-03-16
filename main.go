@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"flag"
+	"go/build"
 	"io/ioutil"
 	"log"
 	"os"
@@ -42,8 +43,9 @@ func getConfigFile(configFile string) (filename string, err error) {
 		"./config.yml",
 		"~/.monitor-status/config.yml",
 		"~/.config/monitor-status.yml",
-		"~/.config/monitor-status.yml",
 		"~/.config/monitor-status/config.yml",
+		build.Default.GOPATH +
+			"/src/github.com/lukapeschke/monitor-status/config.yml",
 	}
 
 	for _, name := range filenames {
