@@ -19,6 +19,22 @@ Dependencies are ``go`` (1.8 or higher version) and ``libudev-dev``
 Once the depencies are installed, simply run ``go get
 github.com/lukapeschke/monitor-status`` and you're good to go.
 
+
+Installing with docker
+======================
+
+If you don't want to install go and dependencies, you can build this with
+docker. A service file will also be generated::
+
+        $ git clone https://github.com/lukapeschke/monitor-status
+        $ cd monitor-status
+        # The image is also available on the docker hub, this step isn't mandatory
+        $ docker build -t lukapeschke/monitor-status .
+        $ docker run --rm -v $PWD:/root/monitor-status lukapeschke/monitor-status $USER
+        $ ./install.sh
+        $ sudo systemctl daemon-reload
+        $ sudo systemctl start monitor-status
+
 Configuration
 =============
 
